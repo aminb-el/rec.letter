@@ -125,7 +125,6 @@
 
 
     #showPasswordButton {
-
       position: absolute;
 
       right: 7px;
@@ -162,7 +161,6 @@
     /* LOGIN BUTTON */
 
     #loginButton {
-
       width: 100%;
 
       height: 46px;
@@ -191,7 +189,6 @@
 
 
     #error {
-
       color: #b91c1c;
 
       font-size: 13px;
@@ -210,7 +207,6 @@
 
 
     .top {
-
       display: flex;
 
       justify-content: space-between;
@@ -224,7 +220,6 @@
 
 
     .files-subtitle {
-
       margin-top: 5px;
 
       color: #6b7280;
@@ -234,7 +229,6 @@
 
 
     #logoutButton {
-
       padding:
         10px
         14px;
@@ -275,7 +269,6 @@
 
 
     th {
-
       text-align: left;
 
       padding:
@@ -297,7 +290,6 @@
 
 
     td {
-
       padding:
         15px
         10px;
@@ -316,7 +308,6 @@
 
 
     .download {
-
       display: inline-block;
 
       padding:
@@ -337,6 +328,43 @@
 
     .download:hover {
       background: #1f2937;
+    }
+
+
+    /* WORDS SECTION */
+
+    .words-section {
+      margin-top: 30px;
+
+      padding-top: 24px;
+
+      border-top: 1px solid #e5e7eb;
+    }
+
+
+    .words-title {
+      margin-bottom: 10px;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.05em;
+
+      color: #6b7280;
+    }
+
+
+    .words {
+      font-size: 17px;
+
+      font-weight: 600;
+
+      line-height: 1.7;
+
+      color: #111827;
     }
 
 
@@ -363,6 +391,11 @@
         font-size: 22px;
       }
 
+
+      .words {
+        font-size: 15px;
+      }
+
     }
 
   </style>
@@ -373,10 +406,7 @@
 <body>
 
 
-  <!-- ===================== -->
   <!-- LOGIN PAGE -->
-  <!-- ===================== -->
-
 
   <div
     id="loginBox"
@@ -397,14 +427,12 @@
       autocomplete="off"
     >
 
-
       <label for="password">
         Password
       </label>
 
 
       <div class="password-wrap">
-
 
         <input
           id="password"
@@ -422,7 +450,6 @@
         >
           Show
         </button>
-
 
       </div>
 
@@ -443,15 +470,11 @@
 
     </form>
 
-
   </div>
 
 
 
-  <!-- ===================== -->
   <!-- FILE PAGE -->
-  <!-- ===================== -->
-
 
   <div
     id="filesBox"
@@ -460,7 +483,6 @@
 
 
     <div class="top">
-
 
       <div>
 
@@ -482,16 +504,13 @@
         Logout
       </button>
 
-
     </div>
 
 
 
     <div class="table-wrapper">
 
-
       <table>
-
 
         <thead>
 
@@ -516,9 +535,6 @@
 
 
         <tbody>
-
-
-          <!-- COUNSELOR RECOMMENDATION -->
 
 
           <tr>
@@ -549,9 +565,6 @@
 
 
 
-          <!-- SCHOOL PROFILE -->
-
-
           <tr>
 
             <td class="role">
@@ -580,9 +593,6 @@
 
 
 
-          <!-- ACADEMIC RECORD -->
-
-
           <tr>
 
             <td class="role">
@@ -609,9 +619,6 @@
 
           </tr>
 
-
-
-          <!-- BEREA -->
 
 
           <tr>
@@ -643,9 +650,23 @@
 
         </tbody>
 
-
       </table>
 
+    </div>
+
+
+
+    <!-- FIRST WORDS -->
+
+    <div class="words-section">
+
+      <div class="words-title">
+        First words that come to mind:
+      </div>
+
+      <div class="words">
+        Kind · Energetic · Candid · Intellectually independent · Generous · Initiative-driven
+      </div>
 
     </div>
 
@@ -654,17 +675,7 @@
 
 
 
-  <!-- ===================== -->
-  <!-- JAVASCRIPT -->
-  <!-- ===================== -->
-
-
   <script>
-
-
-    /* ==============================
-       SETTINGS
-    ============================== */
 
 
     const PASSWORD =
@@ -675,23 +686,12 @@
       30 * 60 * 1000;
 
 
-
-    /* ==============================
-       VARIABLES
-    ============================== */
-
-
     let loggedIn = false;
 
     let logoutTimer = null;
 
     let loginTime = null;
 
-
-
-    /* ==============================
-       ELEMENTS
-    ============================== */
 
 
     const loginBox =
@@ -737,13 +737,7 @@
 
 
 
-    /* ==============================
-       LOGIN
-    ============================== */
-
-
     function login() {
-
 
       loggedIn = true;
 
@@ -794,18 +788,11 @@
 
         );
 
-
     }
 
 
 
-    /* ==============================
-       LOGOUT
-    ============================== */
-
-
     function logout() {
-
 
       loggedIn = false;
 
@@ -847,14 +834,8 @@
 
       passwordInput.focus();
 
-
     }
 
-
-
-    /* ==============================
-       LOGIN FORM
-    ============================== */
 
 
     loginForm.addEventListener(
@@ -862,7 +843,6 @@
       "submit",
 
       function(event) {
-
 
         event.preventDefault();
 
@@ -872,15 +852,11 @@
           PASSWORD
         ) {
 
-
           login();
-
 
         }
 
-
         else {
-
 
           error.textContent =
             "Incorrect password.";
@@ -892,19 +868,12 @@
 
           passwordInput.focus();
 
-
         }
-
 
       }
 
     );
 
-
-
-    /* ==============================
-       SHOW / HIDE PASSWORD
-    ============================== */
 
 
     showPasswordButton.addEventListener(
@@ -913,12 +882,10 @@
 
       function() {
 
-
         if (
           passwordInput.type ===
           "password"
         ) {
-
 
           passwordInput.type =
             "text";
@@ -927,12 +894,9 @@
           showPasswordButton.textContent =
             "Hide";
 
-
         }
 
-
         else {
-
 
           passwordInput.type =
             "password";
@@ -941,22 +905,15 @@
           showPasswordButton.textContent =
             "Show";
 
-
         }
 
 
         passwordInput.focus();
 
-
       }
 
     );
 
-
-
-    /* ==============================
-       LOGOUT BUTTON
-    ============================== */
 
 
     logoutButton.addEventListener(
@@ -965,9 +922,7 @@
 
       function() {
 
-
         logout();
-
 
       }
 
@@ -975,25 +930,14 @@
 
 
 
-    /* ==============================
-       30 MINUTE CHECK
-
-       Extra protection in case
-       browser delays setTimeout
-       while tab is inactive.
-    ============================== */
-
-
     setInterval(
 
       function() {
-
 
         if (
           loggedIn &&
           loginTime
         ) {
-
 
           const elapsed =
             Date.now() -
@@ -1005,15 +949,11 @@
             SESSION_LENGTH
           ) {
 
-
             logout();
-
 
           }
 
-
         }
-
 
       },
 
@@ -1023,20 +963,11 @@
 
 
 
-    /* ==============================
-       TAB BECOMES ACTIVE AGAIN
-
-       If 30 minutes passed while
-       inactive -> logout immediately.
-    ============================== */
-
-
     document.addEventListener(
 
       "visibilitychange",
 
       function() {
-
 
         if (
           document.visibilityState ===
@@ -1044,7 +975,6 @@
           loggedIn &&
           loginTime
         ) {
-
 
           const elapsed =
             Date.now() -
@@ -1056,30 +986,16 @@
             SESSION_LENGTH
           ) {
 
-
             logout();
-
 
           }
 
-
         }
-
 
       }
 
     );
 
-
-
-    /* ==============================
-       BACK / FORWARD CACHE
-
-       Some browsers restore a page
-       without fully refreshing it.
-
-       This forces logout.
-    ============================== */
 
 
     window.addEventListener(
@@ -1088,17 +1004,13 @@
 
       function(event) {
 
-
         if (
           event.persisted
         ) {
 
-
           logout();
 
-
         }
-
 
       }
 
@@ -1106,27 +1018,13 @@
 
 
     /*
-      NO cookies.
+      NO cookies
+      NO localStorage
+      NO sessionStorage
 
-      NO localStorage.
-
-      NO sessionStorage.
-
-      Login exists ONLY in memory.
-
-      Therefore:
-
-      F5 / Reload
-      = LOGIN REQUIRED AGAIN.
-
-      Closing the tab
-      = LOGIN REQUIRED AGAIN.
-
-      Reopening browser
-      = LOGIN REQUIRED AGAIN.
-
-      30 minutes
-      = LOGIN REQUIRED AGAIN.
+      Reload = login again.
+      Close tab = login again.
+      30 minutes = login again.
     */
 
 
