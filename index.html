@@ -502,59 +502,6 @@
 
 
     /* ==========================
-       COUNSELOR WORDS
-    ========================== */
-
-
-    .words-box {
-
-      margin-top: 24px;
-
-      padding:
-        18px
-        20px;
-
-      border:
-        1px solid
-        #e5e7eb;
-
-      border-radius: 10px;
-
-      background: #fafafa;
-
-    }
-
-
-    .small-heading {
-
-      margin-bottom: 9px;
-
-      color: #6b7280;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.05em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .words {
-
-      font-size: 16px;
-
-      font-weight: 700;
-
-      line-height: 1.7;
-
-    }
-
-
-
-    /* ==========================
        FORM ANSWERS
     ========================== */
 
@@ -1176,17 +1123,60 @@
 
 
 
-            <div class="words-box">
+            <!-- COUNSELOR: HOW LONG -->
 
 
-              <div class="small-heading">
-                First words that come to mind
+            <div class="answer-card">
+
+
+              <div class="question">
+                How long have you known this student and in what context?
               </div>
 
 
-              <div class="words">
-                Kind · Energetic · Candid · Intellectually independent · Generous · Initiative-driven
+              <p
+                class="answer"
+                id="counselorHowLong"
+              >Known for 3 years: first as his Informatics teacher, now as his application coordinator.</p>
+
+
+              <button
+                class="copy-button"
+                data-copy="counselorHowLong"
+                type="button"
+              >
+                Copy
+              </button>
+
+
+            </div>
+
+
+
+            <!-- COUNSELOR: FIRST WORDS -->
+
+
+            <div class="answer-card">
+
+
+              <div class="question">
+                What are the first words that come to your mind to describe this student?
               </div>
+
+
+              <p
+                class="answer"
+                id="counselorWords"
+              >Kind, energetic, candid, intellectually independent, generous, and initiative-driven.</p>
+
+
+              <button
+                class="copy-button"
+                data-copy="counselorWords"
+                type="button"
+              >
+                Copy
+              </button>
 
 
             </div>
@@ -1221,9 +1211,6 @@
 
             </div>
 
-
-
-            <!-- LETTER -->
 
 
             <div class="table-wrapper">
@@ -1437,9 +1424,6 @@ Mathematics — 2ème Bac Sciences Mathématiques B, Grade 12, the highest-rigor
 
 
 
-            <!-- FRENCH PAGE -->
-
-
             <button
               id="openFrenchButton"
               class="language-button"
@@ -1484,9 +1468,6 @@ Mathematics — 2ème Bac Sciences Mathématiques B, Grade 12, the highest-rigor
             Version française des réponses du formulaire.
           </p>
 
-
-
-          <!-- FRENCH LETTER DOWNLOAD -->
 
 
           <div class="table-wrapper">
@@ -1721,11 +1702,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
   <script>
 
 
-    /* ========================================
-       SETTINGS
-    ======================================== */
-
-
     const PASSWORD =
       "dartmouth@2031inchallah";
 
@@ -1734,25 +1710,12 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
       30 * 60 * 1000;
 
 
-
-
-    /* ========================================
-       SESSION VARIABLES
-    ======================================== */
-
-
     let loggedIn = false;
 
     let loginTime = null;
 
     let logoutTimer = null;
 
-
-
-
-    /* ========================================
-       ELEMENTS
-    ======================================== */
 
 
     const loginView =
@@ -1823,11 +1786,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
 
 
 
-    /* ========================================
-       LOGIN
-    ======================================== */
-
-
     function login() {
 
 
@@ -1883,11 +1841,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
     }
 
 
-
-
-    /* ========================================
-       LOGOUT
-    ======================================== */
 
 
     function logout() {
@@ -1960,11 +1913,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
 
 
 
-    /* ========================================
-       DASHBOARD
-    ======================================== */
-
-
     function showDashboard() {
 
 
@@ -1997,11 +1945,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
     }
 
 
-
-
-    /* ========================================
-       FRENCH VIEW
-    ======================================== */
 
 
     function showFrenchPage() {
@@ -2042,11 +1985,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
     }
 
 
-
-
-    /* ========================================
-       LOGIN FORM
-    ======================================== */
 
 
     loginForm.addEventListener(
@@ -2093,11 +2031,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
     );
 
 
-
-
-    /* ========================================
-       SHOW / HIDE PASSWORD
-    ======================================== */
 
 
     showPasswordButton.addEventListener(
@@ -2148,11 +2081,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
 
 
 
-    /* ========================================
-       LOGOUT BUTTON
-    ======================================== */
-
-
     logoutButton.addEventListener(
 
       "click",
@@ -2162,11 +2090,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
     );
 
 
-
-
-    /* ========================================
-       FRENCH PAGE BUTTONS
-    ======================================== */
 
 
     openFrenchButton.addEventListener(
@@ -2187,11 +2110,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
     );
 
 
-
-
-    /* ========================================
-       COPY BUTTONS
-    ======================================== */
 
 
     document
@@ -2309,11 +2227,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
 
 
 
-    /* ========================================
-       STRICT 30-MINUTE CHECK
-    ======================================== */
-
-
     setInterval(
 
       function() {
@@ -2352,11 +2265,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
     );
 
 
-
-
-    /* ========================================
-       TAB RETURNS TO FOREGROUND
-    ======================================== */
 
 
     document.addEventListener(
@@ -2409,11 +2317,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
 
 
 
-    /* ========================================
-       BROWSER BACK/FORWARD CACHE
-    ======================================== */
-
-
     window.addEventListener(
 
       "pageshow",
@@ -2435,37 +2338,6 @@ Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e an
       }
 
     );
-
-
-
-
-    /*
-      IMPORTANT
-
-      Nothing is stored in:
-
-      - cookies
-      - localStorage
-      - sessionStorage
-
-      Therefore:
-
-      Reload / F5
-      = login again
-
-      Close tab
-      = login again
-
-      Close browser
-      = login again
-
-      30 minutes
-      = automatic logout
-
-      The French page is inside this same
-      HTML file, so opening it does NOT
-      reload the website.
-    */
 
 
   </script>
