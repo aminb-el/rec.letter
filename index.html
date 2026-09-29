@@ -1,107 +1,2418 @@
-<!-- =====================================
-     FRENCH MATHEMATICS PAGE
-====================================== -->
+<!DOCTYPE html>
+<html lang="en">
 
-<div id="mathFrenchView">
+<head>
 
-  <button
-    id="backFromFrenchButton"
-    class="back-button"
-    type="button"
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
   >
-    ← Back
-  </button>
+
+  <meta
+    name="robots"
+    content="noindex,nofollow,noarchive"
+  >
+
+  <title>Application Files</title>
 
 
-  <h2 class="french-title">
-    Professeur de mathématiques — Khalid Khrbat
-  </h2>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
 
 
-  <p class="french-description">
-    Version française fidèle des réponses du formulaire et de la lettre de recommandation.
-  </p>
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      padding: 24px;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: #f5f6f8;
+
+      color: #111827;
+
+    }
+
+
+    button,
+    input {
+      font-family: inherit;
+    }
+
+
+    button {
+      cursor: pointer;
+    }
 
 
 
-  <!-- =====================================
-       ORIGINAL ENGLISH LETTER
-  ====================================== -->
-
-  <div class="table-wrapper">
-
-    <table>
-
-      <thead>
-
-        <tr>
-
-          <th>
-            Fonction
-          </th>
-
-          <th>
-            Document original
-          </th>
-
-          <th>
-            Télécharger
-          </th>
-
-        </tr>
-
-      </thead>
+    /* ==========================
+       LOGIN
+    ========================== */
 
 
-      <tbody>
+    #loginView {
 
-        <tr>
+      min-height:
+        calc(100vh - 48px);
 
-          <td class="role">
-            Professeur de mathématiques
-          </td>
+      display: flex;
 
-          <td>
-            Lettre de recommandation originale — version anglaise
-          </td>
+      align-items: center;
 
-          <td>
+      justify-content: center;
 
-            <a
-              class="download-button"
-              href="files/Mohamed_Amine_Belachhab_Math_Recommendation_Khalid_Khrbat.pdf"
-              download
-            >
-              Télécharger le PDF
-            </a>
+    }
 
-          </td>
 
-        </tr>
+    .login-card {
 
-      </tbody>
+      width: 100%;
 
-    </table>
+      max-width: 420px;
+
+      padding: 32px;
+
+      background: white;
+
+      border:
+        1px solid
+        #e5e7eb;
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 12px 32px
+        rgba(0, 0, 0, 0.07);
+
+    }
+
+
+    h1 {
+
+      margin: 0 0 8px;
+
+      font-size: 26px;
+
+    }
+
+
+    .subtitle {
+
+      margin:
+        0
+        0
+        24px;
+
+      color: #6b7280;
+
+      font-size: 14px;
+
+    }
+
+
+    label {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+    }
+
+
+    .password-wrap {
+
+      position: relative;
+
+    }
+
+
+    #password {
+
+      width: 100%;
+
+      height: 46px;
+
+      padding:
+        0
+        78px
+        0
+        13px;
+
+      border:
+        1px solid
+        #cbd5e1;
+
+      border-radius: 8px;
+
+      outline: none;
+
+      font-size: 16px;
+
+    }
+
+
+    #password:focus {
+
+      border-color: #111827;
+
+      box-shadow:
+        0 0 0 3px
+        rgba(17, 24, 39, 0.08);
+
+    }
+
+
+    #showPasswordButton {
+
+      position: absolute;
+
+      right: 7px;
+
+      top: 7px;
+
+      height: 32px;
+
+      padding:
+        0
+        11px;
+
+      border: none;
+
+      border-radius: 6px;
+
+      background: #eeeeee;
+
+      color: #111827;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+    }
+
+
+    #loginButton {
+
+      width: 100%;
+
+      height: 46px;
+
+      margin-top: 12px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #111827;
+
+      color: white;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+    }
+
+
+    #error {
+
+      min-height: 18px;
+
+      margin-top: 10px;
+
+      color: #b91c1c;
+
+      font-size: 13px;
+
+    }
+
+
+
+    /* ==========================
+       APPLICATION
+    ========================== */
+
+
+    #appView {
+
+      display: none;
+
+      width: 100%;
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .main-card {
+
+      background: white;
+
+      border:
+        1px solid
+        #e5e7eb;
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 12px 32px
+        rgba(0, 0, 0, 0.06);
+
+      overflow: hidden;
+
+    }
+
+
+    .topbar {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 20px;
+
+      padding:
+        25px
+        28px;
+
+      border-bottom:
+        1px solid
+        #e5e7eb;
+
+    }
+
+
+    .topbar h1 {
+
+      margin: 0;
+
+    }
+
+
+    .session-note {
+
+      margin-top: 5px;
+
+      color: #6b7280;
+
+      font-size: 13px;
+
+    }
+
+
+    .logout-button {
+
+      padding:
+        10px
+        15px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #eeeeee;
+
+      font-weight: 700;
+
+      color: #111827;
+
+    }
+
+
+    .content {
+
+      padding:
+        28px;
+
+    }
+
+
+
+    /* ==========================
+       SECTIONS
+    ========================== */
+
+
+    .section {
+
+      margin-bottom: 42px;
+
+    }
+
+
+    .section:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+
+    .section-header {
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .section-title {
+
+      margin: 0;
+
+      font-size: 20px;
+
+    }
+
+
+    .section-description {
+
+      margin:
+        5px
+        0
+        0;
+
+      color: #6b7280;
+
+      font-size: 13px;
+
+    }
+
+
+
+    /* ==========================
+       TABLE
+    ========================== */
+
+
+    .table-wrapper {
+
+      overflow-x: auto;
+
+    }
+
+
+    table {
+
+      width: 100%;
+
+      min-width: 650px;
+
+      border-collapse: collapse;
+
+    }
+
+
+    th {
+
+      padding:
+        12px
+        10px;
+
+      border-bottom:
+        2px solid
+        #e5e7eb;
+
+      text-align: left;
+
+      color: #6b7280;
+
+      font-size: 12px;
+
+      letter-spacing: 0.04em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    td {
+
+      padding:
+        15px
+        10px;
+
+      border-bottom:
+        1px solid
+        #eeeeee;
+
+      font-size: 14px;
+
+    }
+
+
+    .role {
+
+      font-weight: 700;
+
+    }
+
+
+    .download-button {
+
+      display: inline-block;
+
+      padding:
+        9px
+        13px;
+
+      border-radius: 7px;
+
+      background: #111827;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+    }
+
+
+    .download-button:hover {
+
+      background: #1f2937;
+
+    }
+
+
+
+    /* ==========================
+       FORM ANSWERS
+    ========================== */
+
+
+    .answer-card {
+
+      position: relative;
+
+      margin-top: 15px;
+
+      padding:
+        18px
+        110px
+        18px
+        18px;
+
+      border:
+        1px solid
+        #e5e7eb;
+
+      border-radius: 10px;
+
+      background: #fafafa;
+
+    }
+
+
+    .question {
+
+      margin-bottom: 9px;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+    }
+
+
+    .answer {
+
+      margin: 0;
+
+      color: #374151;
+
+      font-size: 14px;
+
+      line-height: 1.65;
+
+      white-space: pre-line;
+
+    }
+
+
+    .copy-button {
+
+      position: absolute;
+
+      top: 15px;
+
+      right: 15px;
+
+      padding:
+        8px
+        11px;
+
+      border:
+        1px solid
+        #d1d5db;
+
+      border-radius: 7px;
+
+      background: white;
+
+      color: #111827;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+    }
+
+
+    .copy-button:hover {
+
+      background: #f3f4f6;
+
+    }
+
+
+
+    /* ==========================
+       GRADES
+    ========================== */
+
+
+    .grade-box {
+
+      margin-top: 15px;
+
+      padding: 18px;
+
+      border:
+        1px solid
+        #e5e7eb;
+
+      border-radius: 10px;
+
+      background: #fafafa;
+
+    }
+
+
+    .grades {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 10px;
+
+    }
+
+
+    .grade {
+
+      padding:
+        8px
+        12px;
+
+      border-radius: 999px;
+
+      background: #eeeeee;
+
+      color: #6b7280;
+
+      font-size: 13px;
+
+    }
+
+
+    .grade.selected {
+
+      background: #111827;
+
+      color: white;
+
+      font-weight: 700;
+
+    }
+
+
+
+    /* ==========================
+       LANGUAGE BUTTON
+    ========================== */
+
+
+    .language-button {
+
+      display: inline-block;
+
+      margin-top: 22px;
+
+      padding:
+        11px
+        15px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #eeeeee;
+
+      color: #111827;
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+    }
+
+
+
+    /* ==========================
+       FRENCH VIEW
+    ========================== */
+
+
+    #mathFrenchView {
+
+      display: none;
+
+    }
+
+
+    .back-button {
+
+      margin-bottom: 22px;
+
+      padding:
+        9px
+        13px;
+
+      border: none;
+
+      border-radius: 7px;
+
+      background: #eeeeee;
+
+      color: #111827;
+
+      font-weight: 700;
+
+    }
+
+
+    .french-title {
+
+      margin-bottom: 6px;
+
+    }
+
+
+    .french-description {
+
+      margin:
+        0
+        0
+        24px;
+
+      color: #6b7280;
+
+      font-size: 14px;
+
+    }
+
+
+    .translation-heading {
+
+      margin:
+        32px
+        0
+        4px;
+
+      font-size: 18px;
+
+    }
+
+
+    .translation-note {
+
+      margin:
+        0
+        0
+        10px;
+
+      color: #6b7280;
+
+      font-size: 13px;
+
+    }
+
+
+
+    /* ==========================
+       ACCOUNT ACCESS
+    ========================== */
+
+
+    .accounts-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        );
+
+      gap: 16px;
+
+    }
+
+
+    .account-card {
+
+      padding: 20px;
+
+      border:
+        1px solid
+        #e5e7eb;
+
+      border-radius: 12px;
+
+      background: #fafafa;
+
+    }
+
+
+    .account-name {
+
+      margin-bottom: 20px;
+
+      font-size: 17px;
+
+      font-weight: 700;
+
+    }
+
+
+    .credential-row {
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .credential-label {
+
+      margin-bottom: 5px;
+
+      color: #6b7280;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.04em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .credential-value {
+
+      min-height: 22px;
+
+      font-family:
+        "Courier New",
+        monospace;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      word-break: break-all;
+
+    }
+
+
+    .reveal-button {
+
+      width: 100%;
+
+      margin-top: 8px;
+
+      padding:
+        11px
+        14px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #111827;
+
+      color: white;
+
+      font-weight: 700;
+
+    }
+
+
+    .revealed-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-top: 16px;
+
+    }
+
+
+    .small-action {
+
+      padding:
+        8px
+        10px;
+
+      border:
+        1px solid
+        #d1d5db;
+
+      border-radius: 7px;
+
+      background: white;
+
+      color: #111827;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+    }
+
+
+    .small-action:hover {
+
+      background: #f3f4f6;
+
+    }
+
+
+    .danger-action {
+
+      color: #991b1b;
+
+    }
+
+
+
+    /* ==========================
+       VAULT MODAL
+    ========================== */
+
+
+    .verification-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(
+          17,
+          24,
+          39,
+          0.55
+        );
+
+    }
+
+
+    .verification-modal {
+
+      width: 100%;
+
+      max-width: 420px;
+
+      padding: 26px;
+
+      border-radius: 14px;
+
+      background: white;
+
+      box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.25);
+
+    }
+
+
+    .verification-modal h2 {
+
+      margin:
+        0
+        0
+        8px;
+
+    }
+
+
+    .verification-modal p {
+
+      margin:
+        0
+        0
+        18px;
+
+      color: #6b7280;
+
+      font-size: 14px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .vault-password-wrap {
+
+      position: relative;
+
+    }
+
+
+    #vaultPassword {
+
+      width: 100%;
+
+      height: 44px;
+
+      padding:
+        0
+        78px
+        0
+        12px;
+
+      border:
+        1px solid
+        #cbd5e1;
+
+      border-radius: 8px;
+
+      outline: none;
+
+      font-size: 15px;
+
+    }
+
+
+    #vaultPassword:focus {
+
+      border-color: #111827;
+
+      box-shadow:
+        0 0 0 3px
+        rgba(17, 24, 39, 0.08);
+
+    }
+
+
+    #showVaultPasswordButton {
+
+      position: absolute;
+
+      right: 7px;
+
+      top: 6px;
+
+      height: 32px;
+
+      padding:
+        0
+        11px;
+
+      border: none;
+
+      border-radius: 6px;
+
+      background: #eeeeee;
+
+      color: #111827;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+    }
+
+
+    .verification-error {
+
+      min-height: 19px;
+
+      margin-top: 9px;
+
+      color: #b91c1c;
+
+      font-size: 12px;
+
+    }
+
+
+    .verification-buttons {
+
+      display: flex;
+
+      justify-content: flex-end;
+
+      gap: 9px;
+
+      margin-top: 10px;
+
+    }
+
+
+    .cancel-button,
+    .verify-button {
+
+      padding:
+        10px
+        14px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      font-weight: 700;
+
+    }
+
+
+    .cancel-button {
+
+      background: #eeeeee;
+
+      color: #111827;
+
+    }
+
+
+    .verify-button {
+
+      background: #111827;
+
+      color: white;
+
+    }
+
+
+    .verify-button:disabled {
+
+      opacity: 0.65;
+
+      cursor: default;
+
+    }
+
+
+
+    /* ==========================
+       MOBILE
+    ========================== */
+
+
+    @media
+    (max-width: 650px) {
+
+
+      body {
+
+        padding: 12px;
+
+      }
+
+
+      .login-card {
+
+        padding: 22px;
+
+      }
+
+
+      .topbar {
+
+        padding: 20px;
+
+        align-items: flex-start;
+
+      }
+
+
+      .content {
+
+        padding: 20px;
+
+      }
+
+
+      h1 {
+
+        font-size: 22px;
+
+      }
+
+
+      .answer-card {
+
+        padding: 18px;
+
+        padding-top: 58px;
+
+      }
+
+
+      .copy-button {
+
+        left: 18px;
+
+        right: auto;
+
+      }
+
+
+      .accounts-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+
+  <!-- =========================================
+       LOGIN
+  ========================================== -->
+
+
+  <div id="loginView">
+
+
+    <div class="login-card">
+
+
+      <h1>
+        Application Files
+      </h1>
+
+
+      <p class="subtitle">
+        Enter the password to continue.
+      </p>
+
+
+      <form
+        id="loginForm"
+        autocomplete="off"
+      >
+
+
+        <label for="password">
+          Password
+        </label>
+
+
+        <div class="password-wrap">
+
+
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          >
+
+
+          <button
+            id="showPasswordButton"
+            type="button"
+          >
+            Show
+          </button>
+
+
+        </div>
+
+
+        <button
+          id="loginButton"
+          type="submit"
+        >
+          Enter
+        </button>
+
+
+        <div
+          id="error"
+          aria-live="polite"
+        ></div>
+
+
+      </form>
+
+
+    </div>
+
 
   </div>
 
 
 
-  <!-- =====================================
-       FULL FRENCH TRANSLATION OF LETTER
-  ====================================== -->
 
-  <div class="answer-card">
-
-    <div class="question">
-      Traduction française intégrale de la lettre de recommandation
-    </div>
+  <!-- =========================================
+       APPLICATION
+  ========================================== -->
 
 
-    <div
-      class="answer"
-      id="mathRecommendationFr"
-    >Madame, Monsieur, membres du comité d’admission,
+  <div id="appView">
+
+
+    <div class="main-card">
+
+
+      <header class="topbar">
+
+
+        <div>
+
+
+          <h1>
+            Application Files
+          </h1>
+
+
+          <div class="session-note">
+            Session expires after 30 minutes.
+            Reloading the page requires a new login.
+          </div>
+
+
+        </div>
+
+
+        <button
+          id="logoutButton"
+          class="logout-button"
+          type="button"
+        >
+          Logout
+        </button>
+
+
+      </header>
+
+
+
+
+      <div class="content">
+
+
+
+        <!-- =====================================
+             MAIN DASHBOARD
+        ====================================== -->
+
+
+        <div id="dashboardView">
+
+
+
+          <!-- =============================
+               COUNSELOR
+          ============================== -->
+
+
+          <section class="section">
+
+
+            <div class="section-header">
+
+
+              <h2 class="section-title">
+                Counselor
+              </h2>
+
+
+              <p class="section-description">
+                School and counselor application materials.
+              </p>
+
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+
+              <table>
+
+
+                <thead>
+
+
+                  <tr>
+
+
+                    <th>
+                      Recommender function
+                    </th>
+
+
+                    <th>
+                      File
+                    </th>
+
+
+                    <th>
+                      Download
+                    </th>
+
+
+                  </tr>
+
+
+                </thead>
+
+
+
+                <tbody>
+
+
+                  <tr>
+
+
+                    <td class="role">
+                      Counselor
+                    </td>
+
+
+                    <td>
+                      Counselor Recommendation
+                    </td>
+
+
+                    <td>
+
+
+                      <a
+                        class="download-button"
+                        href="files/Mohamed_Amine_Belachhab_Counselor_Recommendation_FINAL.docx"
+                        download
+                      >
+                        Download
+                      </a>
+
+
+                    </td>
+
+
+                  </tr>
+
+
+
+                  <tr>
+
+
+                    <td class="role">
+                      Counselor
+                    </td>
+
+
+                    <td>
+                      School Profile 2026–2027
+                    </td>
+
+
+                    <td>
+
+
+                      <a
+                        class="download-button"
+                        href="files/Groupe_Scolaire_Al_Jabr_School_Profile_2026-2027_FINAL.pdf"
+                        download
+                      >
+                        Download
+                      </a>
+
+
+                    </td>
+
+
+                  </tr>
+
+
+
+                  <tr>
+
+
+                    <td class="role">
+                      Counselor
+                    </td>
+
+
+                    <td>
+                      Academic Record
+                    </td>
+
+
+                    <td>
+
+
+                      <a
+                        class="download-button"
+                        href="files/Mohamed_Amine_Belachhab_Academic_Record.pdf"
+                        download
+                      >
+                        Download
+                      </a>
+
+
+                    </td>
+
+
+                  </tr>
+
+
+
+                  <tr>
+
+
+                    <td class="role">
+                      Counselor
+                    </td>
+
+
+                    <td>
+                      Berea Financial Resources Recommendation
+                    </td>
+
+
+                    <td>
+
+
+                      <a
+                        class="download-button"
+                        href="files/berea-fin-aid-rec.docx"
+                        download
+                      >
+                        Download
+                      </a>
+
+
+                    </td>
+
+
+                  </tr>
+
+
+                </tbody>
+
+
+              </table>
+
+
+            </div>
+
+
+
+            <!-- COUNSELOR: HOW LONG -->
+
+
+            <div class="answer-card">
+
+
+              <div class="question">
+                How long have you known this student and in what context?
+              </div>
+
+
+              <p
+                class="answer"
+                id="counselorHowLong"
+              >Known for 3 years: first as his Informatics teacher, now as his application coordinator.</p>
+
+
+              <button
+                class="copy-button"
+                data-copy="counselorHowLong"
+                type="button"
+              >
+                Copy
+              </button>
+
+
+            </div>
+
+
+
+            <!-- COUNSELOR: FIRST WORDS -->
+
+
+            <div class="answer-card">
+
+
+              <div class="question">
+                What are the first words that come to your mind to describe this student?
+              </div>
+
+
+              <p
+                class="answer"
+                id="counselorWords"
+              >Kind, energetic, candid, intellectually independent, generous, and initiative-driven.</p>
+
+
+              <button
+                class="copy-button"
+                data-copy="counselorWords"
+                type="button"
+              >
+                Copy
+              </button>
+
+
+            </div>
+
+
+          </section>
+
+
+
+
+
+          <!-- =============================
+               MATHEMATICS TEACHER
+          ============================== -->
+
+
+          <section class="section">
+
+
+            <div class="section-header">
+
+
+              <h2 class="section-title">
+                Mathematics Teacher — Khalid Khrbat
+              </h2>
+
+
+              <p class="section-description">
+                Recommendation letter and Common App teacher responses.
+              </p>
+
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+
+              <table>
+
+
+                <thead>
+
+
+                  <tr>
+
+
+                    <th>
+                      Recommender function
+                    </th>
+
+
+                    <th>
+                      File
+                    </th>
+
+
+                    <th>
+                      Download
+                    </th>
+
+
+                  </tr>
+
+
+                </thead>
+
+
+                <tbody>
+
+
+                  <tr>
+
+
+                    <td class="role">
+                      Mathematics Teacher
+                    </td>
+
+
+                    <td>
+                      Recommendation Letter — Khalid Khrbat
+                    </td>
+
+
+                    <td>
+
+
+                      <a
+                        class="download-button"
+                        href="files/Mohamed_Amine_Belachhab_Math_Recommendation_Khalid_Khrbat.pdf"
+                        download
+                      >
+                        Download PDF
+                      </a>
+
+
+                    </td>
+
+
+                  </tr>
+
+
+                </tbody>
+
+
+              </table>
+
+
+            </div>
+
+
+
+
+            <!-- HOW LONG -->
+
+
+            <div class="answer-card">
+
+
+              <div class="question">
+                How long have you known this student and in what context?
+              </div>
+
+
+              <p
+                class="answer"
+                id="mathHowLong"
+              >I taught Mohamed Amine mathematics in 1ère Bac Sciences Mathématiques during Grade 11 and continue to teach him this year in 2ème Bac Sciences Mathématiques B, Grade 12, at Groupe Scolaire Al Jabr in Fès, Morocco. I have therefore known him as his mathematics teacher across two consecutive academic years. In Grade 11, I taught approximately 100 students across three mathematics sections, and Mohamed Amine was among the top five students in my assessment.</p>
+
+
+              <button
+                class="copy-button"
+                data-copy="mathHowLong"
+                type="button"
+              >
+                Copy
+              </button>
+
+
+            </div>
+
+
+
+
+            <!-- FIRST WORDS -->
+
+
+            <div class="answer-card">
+
+
+              <div class="question">
+                What are the first words that come to your mind to describe this student?
+              </div>
+
+
+              <p
+                class="answer"
+                id="mathWords"
+              >Intellectually curious, mathematically independent, rigorous, persistent, self-correcting, ambitious, and genuinely interested in understanding why an argument works rather than simply obtaining the correct answer.</p>
+
+
+              <button
+                class="copy-button"
+                data-copy="mathWords"
+                type="button"
+              >
+                Copy
+              </button>
+
+
+            </div>
+
+
+
+
+            <!-- GRADES -->
+
+
+            <div class="grade-box">
+
+
+              <div class="question">
+                In which grade level(s) was the student enrolled when you taught them?
+              </div>
+
+
+              <div class="grades">
+
+
+                <span class="grade">
+                  9th
+                </span>
+
+
+                <span class="grade">
+                  10th
+                </span>
+
+
+                <span class="grade selected">
+                  ✓ 11th
+                </span>
+
+
+                <span class="grade selected">
+                  ✓ 12th
+                </span>
+
+
+                <span class="grade">
+                  Other
+                </span>
+
+
+              </div>
+
+
+            </div>
+
+
+
+
+            <!-- COURSES -->
+
+
+            <div class="answer-card">
+
+
+              <div class="question">
+                List the courses in which you have taught this student, including the level of course difficulty.
+              </div>
+
+
+              <p
+                class="answer"
+                id="mathCourses"
+              >Mathematics — 1ère Bac Sciences Mathématiques, Grade 11, an advanced mathematics-intensive track in the Moroccan national curriculum.
+
+Mathematics — 2ème Bac Sciences Mathématiques B, Grade 12, the highest-rigor scientific and mathematical pathway available at Groupe Scolaire Al Jabr.</p>
+
+
+              <button
+                class="copy-button"
+                data-copy="mathCourses"
+                type="button"
+              >
+                Copy
+              </button>
+
+
+            </div>
+
+
+
+
+            <button
+              id="openFrenchButton"
+              class="language-button"
+              type="button"
+            >
+              French version of all answers and recommendation →
+            </button>
+
+
+          </section>
+
+
+
+
+
+          <!-- =============================
+               ACCOUNT ACCESS
+          ============================== -->
+
+
+          <section class="section">
+
+
+            <div class="section-header">
+
+
+              <h2 class="section-title">
+                Account Access
+              </h2>
+
+
+              <p class="section-description">
+                Protected application account credentials.
+              </p>
+
+
+            </div>
+
+
+
+            <div class="accounts-grid">
+
+
+
+              <!-- COMMON APP -->
+
+
+              <div class="account-card">
+
+
+                <div class="account-name">
+                  Common App
+                </div>
+
+
+                <div class="credential-row">
+
+
+                  <div class="credential-label">
+                    Email / Username
+                  </div>
+
+
+                  <div
+                    class="credential-value"
+                    id="commonAppEmail"
+                  >
+                    ••••••••••••••••••••
+                  </div>
+
+
+                </div>
+
+
+
+                <div class="credential-row">
+
+
+                  <div class="credential-label">
+                    Password
+                  </div>
+
+
+                  <div
+                    class="credential-value"
+                    id="commonAppPassword"
+                  >
+                    ••••••••••••••••
+                  </div>
+
+
+                </div>
+
+
+
+                <div
+                  class="revealed-actions"
+                  id="commonAppActions"
+                  style="display:none;"
+                >
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    onclick="copyAccountEmail('commonApp', this)"
+                  >
+                    Copy email
+                  </button>
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    id="commonAppToggle"
+                    onclick="toggleAccountPassword('commonApp')"
+                  >
+                    Show password
+                  </button>
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    onclick="copyAccountPassword('commonApp', this)"
+                  >
+                    Copy password
+                  </button>
+
+
+                  <button
+                    class="small-action danger-action"
+                    type="button"
+                    onclick="hideAccount('commonApp')"
+                  >
+                    Hide
+                  </button>
+
+
+                </div>
+
+
+
+                <button
+                  class="reveal-button"
+                  id="commonAppReveal"
+                  type="button"
+                  onclick="requestVaultAccess('commonApp')"
+                >
+                  Reveal credentials
+                </button>
+
+
+              </div>
+
+
+
+
+              <!-- MIT -->
+
+
+              <div class="account-card">
+
+
+                <div class="account-name">
+                  MIT Admissions
+                </div>
+
+
+                <div class="credential-row">
+
+
+                  <div class="credential-label">
+                    Email / Username
+                  </div>
+
+
+                  <div
+                    class="credential-value"
+                    id="mitEmail"
+                  >
+                    ••••••••••••••••••••
+                  </div>
+
+
+                </div>
+
+
+
+                <div class="credential-row">
+
+
+                  <div class="credential-label">
+                    Password
+                  </div>
+
+
+                  <div
+                    class="credential-value"
+                    id="mitPassword"
+                  >
+                    ••••••••••••••••
+                  </div>
+
+
+                </div>
+
+
+
+                <div
+                  class="revealed-actions"
+                  id="mitActions"
+                  style="display:none;"
+                >
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    onclick="copyAccountEmail('mit', this)"
+                  >
+                    Copy email
+                  </button>
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    id="mitToggle"
+                    onclick="toggleAccountPassword('mit')"
+                  >
+                    Show password
+                  </button>
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    onclick="copyAccountPassword('mit', this)"
+                  >
+                    Copy password
+                  </button>
+
+
+                  <button
+                    class="small-action danger-action"
+                    type="button"
+                    onclick="hideAccount('mit')"
+                  >
+                    Hide
+                  </button>
+
+
+                </div>
+
+
+
+                <button
+                  class="reveal-button"
+                  id="mitReveal"
+                  type="button"
+                  onclick="requestVaultAccess('mit')"
+                >
+                  Reveal credentials
+                </button>
+
+
+              </div>
+
+
+
+
+              <!-- BEREA -->
+
+
+              <div class="account-card">
+
+
+                <div class="account-name">
+                  Berea College
+                </div>
+
+
+                <div class="credential-row">
+
+
+                  <div class="credential-label">
+                    Email / Username
+                  </div>
+
+
+                  <div
+                    class="credential-value"
+                    id="bereaEmail"
+                  >
+                    ••••••••••••••••••••
+                  </div>
+
+
+                </div>
+
+
+
+                <div class="credential-row">
+
+
+                  <div class="credential-label">
+                    Password
+                  </div>
+
+
+                  <div
+                    class="credential-value"
+                    id="bereaPassword"
+                  >
+                    ••••••••••••••••
+                  </div>
+
+
+                </div>
+
+
+
+                <div
+                  class="revealed-actions"
+                  id="bereaActions"
+                  style="display:none;"
+                >
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    onclick="copyAccountEmail('berea', this)"
+                  >
+                    Copy email
+                  </button>
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    id="bereaToggle"
+                    onclick="toggleAccountPassword('berea')"
+                  >
+                    Show password
+                  </button>
+
+
+                  <button
+                    class="small-action"
+                    type="button"
+                    onclick="copyAccountPassword('berea', this)"
+                  >
+                    Copy password
+                  </button>
+
+
+                  <button
+                    class="small-action danger-action"
+                    type="button"
+                    onclick="hideAccount('berea')"
+                  >
+                    Hide
+                  </button>
+
+
+                </div>
+
+
+
+                <button
+                  class="reveal-button"
+                  id="bereaReveal"
+                  type="button"
+                  onclick="requestVaultAccess('berea')"
+                >
+                  Reveal credentials
+                </button>
+
+
+              </div>
+
+
+            </div>
+
+
+          </section>
+
+
+        </div>
+
+
+
+
+
+        <!-- =====================================
+             FRENCH MATHEMATICS PAGE
+        ====================================== -->
+
+
+        <div id="mathFrenchView">
+
+
+          <button
+            id="backFromFrenchButton"
+            class="back-button"
+            type="button"
+          >
+            ← Back
+          </button>
+
+
+          <h2 class="french-title">
+            Professeur de mathématiques — Khalid Khrbat
+          </h2>
+
+
+          <p class="french-description">
+            Version française fidèle des réponses du formulaire et de la lettre de recommandation.
+          </p>
+
+
+
+          <!-- ORIGINAL ENGLISH PDF -->
+
+
+          <div class="table-wrapper">
+
+
+            <table>
+
+
+              <thead>
+
+
+                <tr>
+
+
+                  <th>
+                    Fonction
+                  </th>
+
+
+                  <th>
+                    Document original
+                  </th>
+
+
+                  <th>
+                    Télécharger
+                  </th>
+
+
+                </tr>
+
+
+              </thead>
+
+
+              <tbody>
+
+
+                <tr>
+
+
+                  <td class="role">
+                    Professeur de mathématiques
+                  </td>
+
+
+                  <td>
+                    Lettre de recommandation originale — version anglaise
+                  </td>
+
+
+                  <td>
+
+
+                    <a
+                      class="download-button"
+                      href="files/Mohamed_Amine_Belachhab_Math_Recommendation_Khalid_Khrbat.pdf"
+                      download
+                    >
+                      Télécharger le PDF
+                    </a>
+
+
+                  </td>
+
+
+                </tr>
+
+
+              </tbody>
+
+
+            </table>
+
+
+          </div>
+
+
+
+
+          <!-- =====================================
+               FULL FRENCH RECOMMENDATION
+          ====================================== -->
+
+
+          <h3 class="translation-heading">
+            Traduction française intégrale de la lettre
+          </h3>
+
+
+          <p class="translation-note">
+            Traduction fidèle du contenu de la lettre originale anglaise.
+          </p>
+
+
+
+          <div class="answer-card">
+
+
+            <div class="question">
+              Lettre de recommandation — traduction française
+            </div>
+
+
+            <div
+              class="answer"
+              id="mathRecommendationFr"
+            >Madame, Monsieur, membres du comité d’admission,
 
 J’écris cette lettre afin de recommander Mohamed Amine Belachhab, à qui j’ai enseigné les mathématiques en 1ère Bac Sciences Mathématiques l’année dernière et à qui je continue d’enseigner cette année en 2ème Bac Sciences Mathématiques B au Groupe Scolaire Al Jabr à Fès, au Maroc. L’année dernière, j’étais responsable de trois classes de mathématiques, représentant environ 100 élèves. Amine figurait parmi les cinq meilleurs selon mon évaluation. Cette année, je l’ai de nouveau comme élève dans mon unique classe de 2ème Bac, qui compte 35 élèves. J’ai donc eu l’occasion de l’observer au-delà d’une seule année scolaire, et je suis heureux de pouvoir continuer à travailler avec lui pendant sa dernière année du secondaire.
 
@@ -127,143 +2438,2217 @@ Groupe Scolaire Al Jabr
 Fès, Maroc</div>
 
 
-    <button
-      class="copy-button"
-      data-copy="mathRecommendationFr"
-      type="button"
-    >
-      Copier
-    </button>
-
-  </div>
+            <button
+              class="copy-button"
+              data-copy="mathRecommendationFr"
+              type="button"
+            >
+              Copier
+            </button>
 
 
-
-  <!-- =====================================
-       FRENCH HOW LONG
-  ====================================== -->
-
-  <div class="answer-card">
-
-    <div class="question">
-      Depuis combien de temps connaissez-vous cet élève et dans quel contexte ?
-    </div>
-
-
-    <p
-      class="answer"
-      id="mathHowLongFr"
-    >J’ai enseigné les mathématiques à Mohamed Amine en 1ère Bac Sciences Mathématiques, l’équivalent de la 11e année, et je continue à lui enseigner cette année en 2ème Bac Sciences Mathématiques B, l’équivalent de la 12e année, au Groupe Scolaire Al Jabr à Fès, au Maroc. Je le connais donc en tant que professeur de mathématiques sur deux années scolaires consécutives. En 1ère Bac, j’enseignais environ 100 élèves répartis en trois classes de mathématiques, et Mohamed Amine figurait parmi les cinq meilleurs selon mon évaluation.</p>
-
-
-    <button
-      class="copy-button"
-      data-copy="mathHowLongFr"
-      type="button"
-    >
-      Copier
-    </button>
-
-  </div>
+          </div>
 
 
 
-  <!-- =====================================
-       FRENCH FIRST WORDS
-  ====================================== -->
 
-  <div class="answer-card">
-
-    <div class="question">
-      Quels sont les premiers mots qui vous viennent à l’esprit pour décrire cet élève ?
-    </div>
+          <!-- =====================================
+               FRENCH HOW LONG
+          ====================================== -->
 
 
-    <p
-      class="answer"
-      id="mathWordsFr"
-    >Curieux intellectuellement, indépendant en mathématiques, rigoureux, persévérant, capable de s’autocorriger, ambitieux, et réellement intéressé par la compréhension de la validité d’un raisonnement plutôt que par la simple obtention de la bonne réponse.</p>
+          <div class="answer-card">
 
 
-    <button
-      class="copy-button"
-      data-copy="mathWordsFr"
-      type="button"
-    >
-      Copier
-    </button>
-
-  </div>
+            <div class="question">
+              Depuis combien de temps connaissez-vous cet élève et dans quel contexte ?
+            </div>
 
 
-
-  <!-- =====================================
-       FRENCH GRADES
-  ====================================== -->
-
-  <div class="grade-box">
-
-    <div class="question">
-      Dans quels niveaux scolaires avez-vous enseigné à cet élève ?
-    </div>
+            <p
+              class="answer"
+              id="mathHowLongFr"
+            >J’ai enseigné les mathématiques à Mohamed Amine en 1ère Bac Sciences Mathématiques, l’équivalent de la 11e année, et je continue à lui enseigner cette année en 2ème Bac Sciences Mathématiques B, l’équivalent de la 12e année, au Groupe Scolaire Al Jabr à Fès, au Maroc. Je le connais donc en tant que professeur de mathématiques sur deux années scolaires consécutives. En 1ère Bac, j’enseignais environ 100 élèves répartis en trois classes de mathématiques, et Mohamed Amine figurait parmi les cinq meilleurs selon mon évaluation.</p>
 
 
-    <div class="grades">
+            <button
+              class="copy-button"
+              data-copy="mathHowLongFr"
+              type="button"
+            >
+              Copier
+            </button>
 
-      <span class="grade">
-        9e
-      </span>
 
-      <span class="grade">
-        10e
-      </span>
-
-      <span class="grade selected">
-        ✓ 11e
-      </span>
-
-      <span class="grade selected">
-        ✓ 12e
-      </span>
-
-      <span class="grade">
-        Autre
-      </span>
-
-    </div>
-
-  </div>
+          </div>
 
 
 
-  <!-- =====================================
-       FRENCH COURSES
-  ====================================== -->
 
-  <div class="answer-card">
-
-    <div class="question">
-      Indiquez les cours dans lesquels vous avez enseigné à cet élève, y compris leur niveau de difficulté.
-    </div>
+          <!-- =====================================
+               FRENCH FIRST WORDS
+          ====================================== -->
 
 
-    <p
-      class="answer"
-      id="mathCoursesFr"
-    >Mathématiques — 1ère Bac Sciences Mathématiques, équivalent de la 11e année, filière avancée à forte dominante mathématique du programme national marocain.
+          <div class="answer-card">
+
+
+            <div class="question">
+              Quels sont les premiers mots qui vous viennent à l’esprit pour décrire cet élève ?
+            </div>
+
+
+            <p
+              class="answer"
+              id="mathWordsFr"
+            >Curieux intellectuellement, indépendant en mathématiques, rigoureux, persévérant, capable de s’autocorriger, ambitieux, et réellement intéressé par la compréhension de la validité d’un raisonnement plutôt que par la simple obtention de la bonne réponse.</p>
+
+
+            <button
+              class="copy-button"
+              data-copy="mathWordsFr"
+              type="button"
+            >
+              Copier
+            </button>
+
+
+          </div>
+
+
+
+
+          <!-- =====================================
+               FRENCH GRADES
+          ====================================== -->
+
+
+          <div class="grade-box">
+
+
+            <div class="question">
+              Dans quels niveaux scolaires avez-vous enseigné à cet élève ?
+            </div>
+
+
+            <div class="grades">
+
+
+              <span class="grade">
+                9e
+              </span>
+
+
+              <span class="grade">
+                10e
+              </span>
+
+
+              <span class="grade selected">
+                ✓ 11e
+              </span>
+
+
+              <span class="grade selected">
+                ✓ 12e
+              </span>
+
+
+              <span class="grade">
+                Autre
+              </span>
+
+
+            </div>
+
+
+          </div>
+
+
+
+
+          <!-- =====================================
+               FRENCH COURSES
+          ====================================== -->
+
+
+          <div class="answer-card">
+
+
+            <div class="question">
+              Indiquez les cours dans lesquels vous avez enseigné à cet élève, y compris leur niveau de difficulté.
+            </div>
+
+
+            <p
+              class="answer"
+              id="mathCoursesFr"
+            >Mathématiques — 1ère Bac Sciences Mathématiques, équivalent de la 11e année, filière avancée à forte dominante mathématique du programme national marocain.
 
 Mathématiques — 2ème Bac Sciences Mathématiques B, équivalent de la 12e année, filière scientifique et mathématique la plus exigeante proposée au Groupe Scolaire Al Jabr.</p>
 
 
-    <button
-      class="copy-button"
-      data-copy="mathCoursesFr"
-      type="button"
-    >
-      Copier
-    </button>
+            <button
+              class="copy-button"
+              data-copy="mathCoursesFr"
+              type="button"
+            >
+              Copier
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
 
   </div>
 
 
-</div>
+
+
+
+  <!-- =========================================
+       VAULT PASSWORD MODAL
+  ========================================== -->
+
+
+  <div
+    id="verificationOverlay"
+    class="verification-overlay"
+  >
+
+
+    <div class="verification-modal">
+
+
+      <h2>
+        Verify Account Access
+      </h2>
+
+
+      <p>
+        Enter the private vault password to reveal these credentials.
+      </p>
+
+
+      <div class="vault-password-wrap">
+
+
+        <input
+          id="vaultPassword"
+          type="password"
+          placeholder="Vault password"
+          autocomplete="off"
+          spellcheck="false"
+        >
+
+
+        <button
+          id="showVaultPasswordButton"
+          type="button"
+        >
+          Show
+        </button>
+
+
+      </div>
+
+
+      <div
+        id="verificationError"
+        class="verification-error"
+      ></div>
+
+
+      <div class="verification-buttons">
+
+
+        <button
+          id="vaultCancelButton"
+          class="cancel-button"
+          type="button"
+        >
+          Cancel
+        </button>
+
+
+        <button
+          id="vaultVerifyButton"
+          class="verify-button"
+          type="button"
+        >
+          Verify
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+
+  <script>
+
+
+
+    /* ========================================
+       MAIN SITE SETTINGS
+    ======================================== */
+
+
+    const PASSWORD =
+      "dartmouth@2031inchallah";
+
+
+    const SESSION_LENGTH =
+      30 * 60 * 1000;
+
+
+    let loggedIn = false;
+
+    let loginTime = null;
+
+    let logoutTimer = null;
+
+
+
+
+    /* ========================================
+       ELEMENTS
+    ======================================== */
+
+
+    const loginView =
+      document.getElementById(
+        "loginView"
+      );
+
+
+    const appView =
+      document.getElementById(
+        "appView"
+      );
+
+
+    const dashboardView =
+      document.getElementById(
+        "dashboardView"
+      );
+
+
+    const mathFrenchView =
+      document.getElementById(
+        "mathFrenchView"
+      );
+
+
+    const loginForm =
+      document.getElementById(
+        "loginForm"
+      );
+
+
+    const passwordInput =
+      document.getElementById(
+        "password"
+      );
+
+
+    const showPasswordButton =
+      document.getElementById(
+        "showPasswordButton"
+      );
+
+
+    const logoutButton =
+      document.getElementById(
+        "logoutButton"
+      );
+
+
+    const openFrenchButton =
+      document.getElementById(
+        "openFrenchButton"
+      );
+
+
+    const backFromFrenchButton =
+      document.getElementById(
+        "backFromFrenchButton"
+      );
+
+
+    const error =
+      document.getElementById(
+        "error"
+      );
+
+
+
+
+    /* ========================================
+       ENCRYPTED ACCOUNT VAULT
+
+       AES-256-GCM
+       PBKDF2-SHA256
+
+       No plaintext account passwords.
+       No plaintext vault password.
+    ======================================== */
+
+
+    const VAULT_SALT =
+      "5xkc9/GFLoCoAdTTCisGZw==";
+
+
+    const VAULT_IV =
+      "tiI9134fWe57htQ6";
+
+
+    const VAULT_DATA =
+      "rNajMY/UqvrajqnEkAGGtoqxRrtnjPKRyPawAvyX4tWfZNeYahkjbM+UF5K6nOVdmG27zdzydZLCnc3RS8eJfkE2zboQ5rH4GFUbxRVFFlCPmkVt0F9pi6QN8lTEaQSe1nYAk/RABgg4r33t1k/pfp1pnLmaMsGrEew/OsYsGoJmW4zq+BOSoIJPzwK2MLc77xCdiYDYwRbI7VNOIu7r3CAsKCyp6NAC93Gjm6wG/WzL89zpQIG2w21IDSisvrxZDZnPXKzJyufi4uyV+CINb4n5dxtdGzvW6Ndq6dpefndz6b3gKE4Y1LdW+Gh6x4ABFACBfwYZ1lcLUA==";
+
+
+    const VAULT_ITERATIONS =
+      250000;
+
+
+    const ACCOUNT_HIDE_TIME =
+      60 * 1000;
+
+
+    let requestedAccount =
+      null;
+
+
+    const accountSecrets = {
+
+      commonApp: null,
+
+      mit: null,
+
+      berea: null
+
+    };
+
+
+    const accountTimers = {
+
+      commonApp: null,
+
+      mit: null,
+
+      berea: null
+
+    };
+
+
+
+
+    /* ========================================
+       MAIN LOGIN
+    ======================================== */
+
+
+    function login() {
+
+
+      loggedIn = true;
+
+
+      loginTime =
+        Date.now();
+
+
+      passwordInput.value =
+        "";
+
+
+      passwordInput.type =
+        "password";
+
+
+      showPasswordButton.textContent =
+        "Show";
+
+
+      error.textContent =
+        "";
+
+
+      loginView.style.display =
+        "none";
+
+
+      appView.style.display =
+        "block";
+
+
+      showDashboard();
+
+
+      clearTimeout(
+        logoutTimer
+      );
+
+
+      logoutTimer =
+        setTimeout(
+
+          logout,
+
+          SESSION_LENGTH
+
+        );
+
+
+    }
+
+
+
+
+    /* ========================================
+       LOGOUT
+    ======================================== */
+
+
+    function logout() {
+
+
+      hideAllAccounts();
+
+
+      loggedIn = false;
+
+
+      loginTime =
+        null;
+
+
+      clearTimeout(
+        logoutTimer
+      );
+
+
+      logoutTimer =
+        null;
+
+
+      appView.style.display =
+        "none";
+
+
+      dashboardView.style.display =
+        "block";
+
+
+      mathFrenchView.style.display =
+        "none";
+
+
+      loginView.style.display =
+        "flex";
+
+
+      passwordInput.value =
+        "";
+
+
+      passwordInput.type =
+        "password";
+
+
+      showPasswordButton.textContent =
+        "Show";
+
+
+      error.textContent =
+        "";
+
+
+      history.replaceState(
+
+        null,
+
+        "",
+
+        window.location.pathname +
+        window.location.search
+
+      );
+
+
+      passwordInput.focus();
+
+
+    }
+
+
+
+
+    /* ========================================
+       DASHBOARD
+    ======================================== */
+
+
+    function showDashboard() {
+
+
+      dashboardView.style.display =
+        "block";
+
+
+      mathFrenchView.style.display =
+        "none";
+
+
+      history.replaceState(
+
+        null,
+
+        "",
+
+        window.location.pathname +
+        window.location.search
+
+      );
+
+
+      window.scrollTo(
+        0,
+        0
+      );
+
+
+    }
+
+
+
+
+    /* ========================================
+       FRENCH PAGE
+    ======================================== */
+
+
+    function showFrenchPage() {
+
+
+      if (!loggedIn) {
+
+        return;
+
+      }
+
+
+      dashboardView.style.display =
+        "none";
+
+
+      mathFrenchView.style.display =
+        "block";
+
+
+      history.replaceState(
+
+        null,
+
+        "",
+
+        "#math-fr"
+
+      );
+
+
+      window.scrollTo(
+        0,
+        0
+      );
+
+
+    }
+
+
+
+
+    /* ========================================
+       MAIN LOGIN FORM
+    ======================================== */
+
+
+    loginForm.addEventListener(
+
+      "submit",
+
+      function(event) {
+
+
+        event.preventDefault();
+
+
+        if (
+          passwordInput.value ===
+          PASSWORD
+        ) {
+
+
+          login();
+
+
+        }
+
+
+        else {
+
+
+          error.textContent =
+            "Incorrect password.";
+
+
+          passwordInput.value =
+            "";
+
+
+          passwordInput.focus();
+
+
+        }
+
+
+      }
+
+    );
+
+
+
+
+    /* ========================================
+       SHOW / HIDE MAIN PASSWORD
+    ======================================== */
+
+
+    showPasswordButton.addEventListener(
+
+      "click",
+
+      function() {
+
+
+        if (
+          passwordInput.type ===
+          "password"
+        ) {
+
+
+          passwordInput.type =
+            "text";
+
+
+          showPasswordButton.textContent =
+            "Hide";
+
+
+        }
+
+
+        else {
+
+
+          passwordInput.type =
+            "password";
+
+
+          showPasswordButton.textContent =
+            "Show";
+
+
+        }
+
+
+        passwordInput.focus();
+
+
+      }
+
+    );
+
+
+
+
+    logoutButton.addEventListener(
+
+      "click",
+
+      logout
+
+    );
+
+
+
+
+    openFrenchButton.addEventListener(
+
+      "click",
+
+      showFrenchPage
+
+    );
+
+
+
+
+    backFromFrenchButton.addEventListener(
+
+      "click",
+
+      showDashboard
+
+    );
+
+
+
+
+    /* ========================================
+       NORMAL COPY BUTTONS
+    ======================================== */
+
+
+    document
+      .querySelectorAll(
+        ".copy-button"
+      )
+      .forEach(
+
+        function(button) {
+
+
+          button.addEventListener(
+
+            "click",
+
+            async function() {
+
+
+              const targetId =
+                button.getAttribute(
+                  "data-copy"
+                );
+
+
+              const target =
+                document.getElementById(
+                  targetId
+                );
+
+
+              const text =
+                target.innerText.trim();
+
+
+              await copyText(
+                text
+              );
+
+
+              const originalText =
+                button.textContent;
+
+
+              button.textContent =
+                originalText.trim() ===
+                "Copier"
+                  ? "Copié"
+                  : "Copied";
+
+
+              setTimeout(
+
+                function() {
+
+
+                  button.textContent =
+                    originalText;
+
+
+                },
+
+                1200
+
+              );
+
+
+            }
+
+          );
+
+
+        }
+
+      );
+
+
+
+
+    /* ========================================
+       COPY HELPER
+    ======================================== */
+
+
+    async function copyText(
+      text
+    ) {
+
+
+      try {
+
+
+        await navigator
+          .clipboard
+          .writeText(
+            text
+          );
+
+
+      }
+
+
+      catch (
+        copyError
+      ) {
+
+
+        const temporary =
+          document.createElement(
+            "textarea"
+          );
+
+
+        temporary.value =
+          text;
+
+
+        temporary.style.position =
+          "fixed";
+
+
+        temporary.style.opacity =
+          "0";
+
+
+        document.body.appendChild(
+          temporary
+        );
+
+
+        temporary.select();
+
+
+        document.execCommand(
+          "copy"
+        );
+
+
+        temporary.remove();
+
+
+      }
+
+
+    }
+
+
+
+
+    /* ========================================
+       BASE64 HELPER
+    ======================================== */
+
+
+    function base64ToBytes(
+      base64
+    ) {
+
+
+      const binary =
+        atob(
+          base64
+        );
+
+
+      const bytes =
+        new Uint8Array(
+          binary.length
+        );
+
+
+      for (
+        let i = 0;
+        i < binary.length;
+        i++
+      ) {
+
+
+        bytes[i] =
+          binary.charCodeAt(
+            i
+          );
+
+
+      }
+
+
+      return bytes;
+
+
+    }
+
+
+
+
+    /* ========================================
+       DECRYPT VAULT
+    ======================================== */
+
+
+    async function decryptVault(
+      vaultPassword
+    ) {
+
+
+      const encoder =
+        new TextEncoder();
+
+
+      const baseKey =
+        await crypto.subtle.importKey(
+
+          "raw",
+
+          encoder.encode(
+            vaultPassword
+          ),
+
+          "PBKDF2",
+
+          false,
+
+          [
+            "deriveKey"
+          ]
+
+        );
+
+
+      const derivedKey =
+        await crypto.subtle.deriveKey(
+
+          {
+
+            name:
+              "PBKDF2",
+
+            salt:
+              base64ToBytes(
+                VAULT_SALT
+              ),
+
+            iterations:
+              VAULT_ITERATIONS,
+
+            hash:
+              "SHA-256"
+
+          },
+
+          baseKey,
+
+          {
+
+            name:
+              "AES-GCM",
+
+            length:
+              256
+
+          },
+
+          false,
+
+          [
+            "decrypt"
+          ]
+
+        );
+
+
+      const decrypted =
+        await crypto.subtle.decrypt(
+
+          {
+
+            name:
+              "AES-GCM",
+
+            iv:
+              base64ToBytes(
+                VAULT_IV
+              )
+
+          },
+
+          derivedKey,
+
+          base64ToBytes(
+            VAULT_DATA
+          )
+
+        );
+
+
+      const decoded =
+        new TextDecoder()
+          .decode(
+            decrypted
+          );
+
+
+      return JSON.parse(
+        decoded
+      );
+
+
+    }
+
+
+
+
+    /* ========================================
+       OPEN VAULT MODAL
+    ======================================== */
+
+
+    function requestVaultAccess(
+      account
+    ) {
+
+
+      if (!loggedIn) {
+
+        return;
+
+      }
+
+
+      requestedAccount =
+        account;
+
+
+      const input =
+        document.getElementById(
+          "vaultPassword"
+        );
+
+
+      input.value =
+        "";
+
+
+      input.type =
+        "password";
+
+
+      document
+        .getElementById(
+          "showVaultPasswordButton"
+        )
+        .textContent =
+          "Show";
+
+
+      document
+        .getElementById(
+          "verificationError"
+        )
+        .textContent =
+          "";
+
+
+      document
+        .getElementById(
+          "verificationOverlay"
+        )
+        .style.display =
+          "flex";
+
+
+      setTimeout(
+
+        function() {
+
+
+          input.focus();
+
+
+        },
+
+        50
+
+      );
+
+
+    }
+
+
+
+
+    /* ========================================
+       CLOSE VAULT MODAL
+    ======================================== */
+
+
+    function closeVaultModal() {
+
+
+      requestedAccount =
+        null;
+
+
+      const input =
+        document.getElementById(
+          "vaultPassword"
+        );
+
+
+      input.value =
+        "";
+
+
+      input.type =
+        "password";
+
+
+      document
+        .getElementById(
+          "showVaultPasswordButton"
+        )
+        .textContent =
+          "Show";
+
+
+      document
+        .getElementById(
+          "verificationError"
+        )
+        .textContent =
+          "";
+
+
+      document
+        .getElementById(
+          "verificationOverlay"
+        )
+        .style.display =
+          "none";
+
+
+      const verifyButton =
+        document.getElementById(
+          "vaultVerifyButton"
+        );
+
+
+      verifyButton.disabled =
+        false;
+
+
+      verifyButton.textContent =
+        "Verify";
+
+
+    }
+
+
+
+
+    /* ========================================
+       VERIFY VAULT PASSWORD
+    ======================================== */
+
+
+    async function verifyVaultAccess() {
+
+
+      if (!requestedAccount) {
+
+        return;
+
+      }
+
+
+      const input =
+        document.getElementById(
+          "vaultPassword"
+        );
+
+
+      const vaultPassword =
+        input.value;
+
+
+      const errorBox =
+        document.getElementById(
+          "verificationError"
+        );
+
+
+      const verifyButton =
+        document.getElementById(
+          "vaultVerifyButton"
+        );
+
+
+      if (!vaultPassword) {
+
+
+        errorBox.textContent =
+          "Enter the vault password.";
+
+
+        input.focus();
+
+
+        return;
+
+
+      }
+
+
+      errorBox.textContent =
+        "";
+
+
+      verifyButton.disabled =
+        true;
+
+
+      verifyButton.textContent =
+        "Verifying…";
+
+
+      try {
+
+
+        const vault =
+          await decryptVault(
+            vaultPassword
+          );
+
+
+        const account =
+          requestedAccount;
+
+
+        const credentials =
+          vault[
+            account
+          ];
+
+
+        if (!credentials) {
+
+
+          throw new Error(
+            "Missing account"
+          );
+
+
+        }
+
+
+        revealAccount(
+
+          account,
+
+          credentials
+
+        );
+
+
+        closeVaultModal();
+
+
+      }
+
+
+      catch (
+        vaultError
+      ) {
+
+
+        errorBox.textContent =
+          "Incorrect vault password.";
+
+
+        input.value =
+          "";
+
+
+        input.type =
+          "password";
+
+
+        document
+          .getElementById(
+            "showVaultPasswordButton"
+          )
+          .textContent =
+            "Show";
+
+
+        verifyButton.disabled =
+          false;
+
+
+        verifyButton.textContent =
+          "Verify";
+
+
+        input.focus();
+
+
+      }
+
+
+    }
+
+
+
+
+    /* ========================================
+       SHOW / HIDE VAULT PASSWORD
+    ======================================== */
+
+
+    function toggleVaultPassword() {
+
+
+      const input =
+        document.getElementById(
+          "vaultPassword"
+        );
+
+
+      const button =
+        document.getElementById(
+          "showVaultPasswordButton"
+        );
+
+
+      if (
+        input.type ===
+        "password"
+      ) {
+
+
+        input.type =
+          "text";
+
+
+        button.textContent =
+          "Hide";
+
+
+      }
+
+
+      else {
+
+
+        input.type =
+          "password";
+
+
+        button.textContent =
+          "Show";
+
+
+      }
+
+
+      input.focus();
+
+
+    }
+
+
+
+
+    /* ========================================
+       REVEAL ACCOUNT
+    ======================================== */
+
+
+    function revealAccount(
+      account,
+      credentials
+    ) {
+
+
+      hideAccount(
+        account
+      );
+
+
+      accountSecrets[
+        account
+      ] = {
+
+
+        email:
+          credentials.email,
+
+
+        password:
+          credentials.password,
+
+
+        passwordVisible:
+          false
+
+
+      };
+
+
+      document
+        .getElementById(
+          account +
+          "Email"
+        )
+        .textContent =
+          credentials.email;
+
+
+      document
+        .getElementById(
+          account +
+          "Password"
+        )
+        .textContent =
+          "••••••••••••••••";
+
+
+      document
+        .getElementById(
+          account +
+          "Toggle"
+        )
+        .textContent =
+          "Show password";
+
+
+      document
+        .getElementById(
+          account +
+          "Actions"
+        )
+        .style.display =
+          "flex";
+
+
+      document
+        .getElementById(
+          account +
+          "Reveal"
+        )
+        .style.display =
+          "none";
+
+
+      accountTimers[
+        account
+      ] =
+        setTimeout(
+
+          function() {
+
+
+            hideAccount(
+              account
+            );
+
+
+          },
+
+          ACCOUNT_HIDE_TIME
+
+        );
+
+
+    }
+
+
+
+
+    /* ========================================
+       SHOW / HIDE ACCOUNT PASSWORD
+    ======================================== */
+
+
+    function toggleAccountPassword(
+      account
+    ) {
+
+
+      const secret =
+        accountSecrets[
+          account
+        ];
+
+
+      if (!secret) {
+
+        return;
+
+      }
+
+
+      const field =
+        document.getElementById(
+          account +
+          "Password"
+        );
+
+
+      const button =
+        document.getElementById(
+          account +
+          "Toggle"
+        );
+
+
+      if (
+        secret.passwordVisible
+      ) {
+
+
+        field.textContent =
+          "••••••••••••••••";
+
+
+        button.textContent =
+          "Show password";
+
+
+        secret.passwordVisible =
+          false;
+
+
+      }
+
+
+      else {
+
+
+        field.textContent =
+          secret.password;
+
+
+        button.textContent =
+          "Hide password";
+
+
+        secret.passwordVisible =
+          true;
+
+
+      }
+
+
+    }
+
+
+
+
+    /* ========================================
+       COPY ACCOUNT EMAIL
+    ======================================== */
+
+
+    async function copyAccountEmail(
+      account,
+      button
+    ) {
+
+
+      const secret =
+        accountSecrets[
+          account
+        ];
+
+
+      if (!secret) {
+
+        return;
+
+      }
+
+
+      await copyText(
+        secret.email
+      );
+
+
+      flashCopied(
+        button
+      );
+
+
+    }
+
+
+
+
+    /* ========================================
+       COPY ACCOUNT PASSWORD
+    ======================================== */
+
+
+    async function copyAccountPassword(
+      account,
+      button
+    ) {
+
+
+      const secret =
+        accountSecrets[
+          account
+        ];
+
+
+      if (!secret) {
+
+        return;
+
+      }
+
+
+      await copyText(
+        secret.password
+      );
+
+
+      flashCopied(
+        button
+      );
+
+
+    }
+
+
+
+
+    /* ========================================
+       COPIED FEEDBACK
+    ======================================== */
+
+
+    function flashCopied(
+      button
+    ) {
+
+
+      const original =
+        button.textContent;
+
+
+      button.textContent =
+        "Copied";
+
+
+      setTimeout(
+
+        function() {
+
+
+          button.textContent =
+            original;
+
+
+        },
+
+        1100
+
+      );
+
+
+    }
+
+
+
+
+    /* ========================================
+       HIDE ONE ACCOUNT
+    ======================================== */
+
+
+    function hideAccount(
+      account
+    ) {
+
+
+      clearTimeout(
+        accountTimers[
+          account
+        ]
+      );
+
+
+      accountTimers[
+        account
+      ] =
+        null;
+
+
+      const emailElement =
+        document.getElementById(
+          account +
+          "Email"
+        );
+
+
+      const passwordElement =
+        document.getElementById(
+          account +
+          "Password"
+        );
+
+
+      const actionsElement =
+        document.getElementById(
+          account +
+          "Actions"
+        );
+
+
+      const revealElement =
+        document.getElementById(
+          account +
+          "Reveal"
+        );
+
+
+      const toggleElement =
+        document.getElementById(
+          account +
+          "Toggle"
+        );
+
+
+      if (
+        emailElement
+      ) {
+
+
+        emailElement.textContent =
+          "••••••••••••••••••••";
+
+
+      }
+
+
+      if (
+        passwordElement
+      ) {
+
+
+        passwordElement.textContent =
+          "••••••••••••••••";
+
+
+      }
+
+
+      if (
+        actionsElement
+      ) {
+
+
+        actionsElement.style.display =
+          "none";
+
+
+      }
+
+
+      if (
+        revealElement
+      ) {
+
+
+        revealElement.style.display =
+          "block";
+
+
+      }
+
+
+      if (
+        toggleElement
+      ) {
+
+
+        toggleElement.textContent =
+          "Show password";
+
+
+      }
+
+
+      accountSecrets[
+        account
+      ] =
+        null;
+
+
+    }
+
+
+
+
+    /* ========================================
+       HIDE ALL ACCOUNTS
+    ======================================== */
+
+
+    function hideAllAccounts() {
+
+
+      hideAccount(
+        "commonApp"
+      );
+
+
+      hideAccount(
+        "mit"
+      );
+
+
+      hideAccount(
+        "berea"
+      );
+
+
+      closeVaultModal();
+
+
+    }
+
+
+
+
+    /* ========================================
+       VAULT EVENTS
+    ======================================== */
+
+
+    document
+      .getElementById(
+        "showVaultPasswordButton"
+      )
+      .addEventListener(
+
+        "click",
+
+        toggleVaultPassword
+
+      );
+
+
+
+
+    document
+      .getElementById(
+        "vaultCancelButton"
+      )
+      .addEventListener(
+
+        "click",
+
+        closeVaultModal
+
+      );
+
+
+
+
+    document
+      .getElementById(
+        "vaultVerifyButton"
+      )
+      .addEventListener(
+
+        "click",
+
+        verifyVaultAccess
+
+      );
+
+
+
+
+    document
+      .getElementById(
+        "vaultPassword"
+      )
+      .addEventListener(
+
+        "keydown",
+
+        function(event) {
+
+
+          if (
+            event.key ===
+            "Enter"
+          ) {
+
+
+            verifyVaultAccess();
+
+
+          }
+
+
+          else if (
+            event.key ===
+            "Escape"
+          ) {
+
+
+            closeVaultModal();
+
+
+          }
+
+
+        }
+
+      );
+
+
+
+
+    document
+      .getElementById(
+        "verificationOverlay"
+      )
+      .addEventListener(
+
+        "click",
+
+        function(event) {
+
+
+          if (
+            event.target ===
+            this
+          ) {
+
+
+            closeVaultModal();
+
+
+          }
+
+
+        }
+
+      );
+
+
+
+
+    /* ========================================
+       STRICT 30-MINUTE CHECK
+    ======================================== */
+
+
+    setInterval(
+
+      function() {
+
+
+        if (
+          loggedIn &&
+          loginTime
+        ) {
+
+
+          const elapsed =
+            Date.now() -
+            loginTime;
+
+
+          if (
+            elapsed >=
+            SESSION_LENGTH
+          ) {
+
+
+            logout();
+
+
+          }
+
+
+        }
+
+
+      },
+
+      5000
+
+    );
+
+
+
+
+    /* ========================================
+       TAB RETURNS TO FOREGROUND
+    ======================================== */
+
+
+    document.addEventListener(
+
+      "visibilitychange",
+
+      function() {
+
+
+        if (
+
+          document.visibilityState ===
+            "visible"
+
+          &&
+
+          loggedIn
+
+          &&
+
+          loginTime
+
+        ) {
+
+
+          const elapsed =
+            Date.now() -
+            loginTime;
+
+
+          if (
+            elapsed >=
+            SESSION_LENGTH
+          ) {
+
+
+            logout();
+
+
+          }
+
+
+        }
+
+
+      }
+
+    );
+
+
+
+
+    /* ========================================
+       BACK/FORWARD CACHE
+    ======================================== */
+
+
+    window.addEventListener(
+
+      "pageshow",
+
+      function(event) {
+
+
+        if (
+          event.persisted
+        ) {
+
+
+          logout();
+
+
+        }
+
+
+      }
+
+    );
+
+
+
+
+    /*
+      MAIN SITE
+
+      No cookies.
+      No localStorage.
+      No sessionStorage.
+
+      Reload = login again.
+      Close tab = login again.
+      30 minutes = logout.
+
+
+      ACCOUNT VAULT
+
+      Vault password is NOT in source.
+
+      Application account credentials
+      are AES-256-GCM encrypted.
+
+      Key is derived using
+      PBKDF2-SHA256 with 250,000 rounds.
+
+      Revealed credentials disappear
+      after 60 seconds.
+
+      Logout clears all decrypted
+      credentials from page state.
+    */
+
+
+  </script>
+
+
+</body>
+
+</html>
